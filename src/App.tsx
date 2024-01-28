@@ -16,7 +16,7 @@ const App = () => {
     setS({ loading: true });
     service({ url: '/tags', method: 'GET', params })
       .then((res: any) => {
-        form.setFieldsValue({ name: '', txt: '', txtInfo: '' });
+        form.setFieldsValue({ name: '' });
         setS({
           list: res.data,
           loading: false,
