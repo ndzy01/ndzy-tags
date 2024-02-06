@@ -3,7 +3,7 @@ import { Button, Popconfirm, Table, List, Form, Input } from 'antd';
 import type { TableProps } from 'antd';
 import VirtualList from 'rc-virtual-list';
 import { useRef } from 'react';
-import { service } from './http';
+import service from './http';
 
 const App = () => {
   const [form] = Form.useForm();
@@ -16,7 +16,6 @@ const App = () => {
     setS({ loading: true });
     service({ url: '/tags', method: 'GET', params })
       .then((res: any) => {
-        form.setFieldsValue({ name: '' });
         setS({
           list: res.data,
           loading: false,
